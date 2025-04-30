@@ -35,6 +35,6 @@ pub struct Args {
     #[clap(short = 'v', long = "version", action = clap::ArgAction::SetTrue)]
     pub version: Option<bool>,
 
-    #[clap(short = 'r', long = "ru", action = clap::ArgAction::SetTrue)]
+    #[clap(short = 'r', action = clap::ArgAction::SetTrue)]
     pub ru: Option<bool>,
 }

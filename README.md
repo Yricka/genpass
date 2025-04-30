@@ -1,4 +1,4 @@
-# GenPass v 1.0
+# GenPass v 1.2
 
 **GenPass** is a powerful tool for generating and validating passwords, written in **Rust**. It supports flexible customization of lengths, character types (lowercase, uppercase, digits, special symbols), and password strength checking.
 
@@ -37,7 +37,7 @@ Or use the pre-built version available [here](https://github.com/Yricka/genpass/
 - Open cmd.exe (Command Prompt).
 - Enter the command:
 ```bash
-genpass --version
+genpass -v
 ```
 
 ## 🛠️ Usage
@@ -58,7 +58,7 @@ genpass
 
 Example:
 ```bash
-genpass --length 12 --count 3 --upercase
+genpass -l 12 -c 3 --upercase
 ```
 
 ## To check password strength
@@ -80,10 +80,10 @@ genpass --check-file passwords.txt
 ## Example of password analysis output
 ```bash 
 Password Analysis:
-Length: 16
-Entropy: 98.32
-Password quality:
-[████████████████████] 98%
+🧮: Length: 16
+🔐: 104.87 / 104.87 (100%)
+Password class: 🟢 Strong
+[████████████████████] 100%
 ✅ Password looks very strong!
 ```
 
@@ -92,7 +92,7 @@ You can choose the output language using the -r or --ru flag for Russian (Englis
 
 Example:
 ```bash
-genpass --check "Пароль123!" --ru
+genpass --check "Пароль123!" -r
 ```
 
 ## 💡 Tips for improving your password

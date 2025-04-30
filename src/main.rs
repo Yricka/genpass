@@ -11,7 +11,6 @@ fn main() {
     let _ = enable_ansi_support::enable_ansi_support();
 
     let args = args::Args::parse();
-
     let is_russian = args.ru.unwrap_or(false);
 
     if args.version.unwrap_or(false) {
@@ -30,13 +29,6 @@ fn main() {
     } else if let Some(file_path) = &args.check_file.clone() {
         check_pass::check_passwords_from_file(file_path, is_russian);
         return;
-    } else {
-        gen_pass::generate_password(
-            args.length,
-            args.uppercase,
-            args.numbers,
-            args.special,
-        );
     }
     
     for _ in 0..args.count {
@@ -46,6 +38,8 @@ fn main() {
             args.numbers,
             args.special,
         );
-        println!("{}", password.bright_green());
+        println!("Your password:{}", password.bright_green());
     }
+
+    println!("The generated password was copied to the buffer.");
 }
